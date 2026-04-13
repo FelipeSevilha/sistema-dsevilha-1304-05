@@ -1,5 +1,5 @@
 import Sidebar from '@/components/layout/Sidebar'
-import Cabecalho from '@/components/layout/Cabeçalho'
+import Header from '@/components/layout/Header'
 
 export default function DashboardLayout({
   children,
@@ -7,11 +7,11 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="min-h-screen flex bg-slate-50">
       <Sidebar />
 
       <div className="flex-1 min-w-0">
-        <Cabecalho />
+        <Header />
 
         <main className="p-6">
           {children}
