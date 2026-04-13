@@ -1,18 +1,20 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { AuthProvider } from '@/lib/auth-context';
+'use client'
 
-export const metadata: Metadata = {
-  title: "Gráfica D'Sevilha ERP",
-  description: "Sistema ERP para Gráfica D'Sevilha",
-};
+import './globals.css'
+import { AppProvider } from '@/lib/app-context'
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="pt-BR">
-      <body className="font-sans">
-        <AuthProvider>{children}</AuthProvider>
+    <html lang="pt-br">
+      <body>
+        <AppProvider>
+          {children}
+        </AppProvider>
       </body>
     </html>
-  );
+  )
 }
