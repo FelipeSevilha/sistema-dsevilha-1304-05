@@ -1,20 +1,18 @@
-'use client'
+import Sidebar from '@/components/layout/Sidebar'
+import Header from '@/components/layout/Header'
 
-import './globals.css'
-import { AppProvider } from '@/lib/app-context'
-
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br">
-      <body>
-        <AppProvider>
-          {children}
-        </AppProvider>
-      </body>
-    </html>
+    <div className="min-h-screen flex bg-slate-50">
+      <Sidebar />
+      <div className="flex-1 min-w-0">
+        <Header />
+        <main className="p-6">{children}</main>
+      </div>
+    </div>
   )
 }
